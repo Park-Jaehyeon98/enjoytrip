@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.ssafy.enjoytrip.model.dao.AttractionMapper">
+
+	<!-- 시도코드로 관광지 조회(리스트로) -->
+	<select id="select" resultType="AttractionDto">
+		SELECT 	
+			content_id as contentId, title, addr1, tel, first_image as firstImage,
+			(
+				SELECT count(*) FROM attraction_like WHERE content_id = contentId  
+			) as "like"
+		FROM attraction_info
+		<if test="sidoCode != 0 and contentTypeId == 0 and title == ''">
+			<if test="gugunCode == 0">
+				WHERE sido_code = #{sidoCode}
+			</if>
+			<if test="gugunCode != 0">
+				WHERE sido_code = #{sidoCode} and gugun_code = #{gugunCode}
+			</if>		
+		</if>
+		<if test="sidoCode == 0 and contentTypeId != 0 and title == ''">
+			WHERE content_type_id = #{contentTypeId}
+		</if>
+		<if test="sidoCode == 0 and contentTypeId == 0 and title != ''">
+			WHERE title like CONCAT("%", #{title}, "%")
+		</if>
+		<if test="sidoCode != 0 and contentTypeId != 0 and title == ''">
+			<if test="gugunCode == 0">
+				WHERE sido_code = #{sidoCode}
+			</if>
+			<if test="gugunCode != 0">
+				WHERE sido_code = #{sidoCode} and gugun_code = #{gugunCode}
+			</if>
+			AND content_type_id = #{contentTypeId}
+		</if>
+		<if test="sidoCode == 0 and contentTypeId != 0 and title != ''">
+			WHERE content_type_id = #{contentTypeId} and title like CONCAT("%", #{title}, "%")
+		</if>
+		<if test="sidoCode != 0 and contentTypeId == 0 and title != ''">
+			<if test="gugunCode == 0">
+				WHERE sido_code = #{sidoCode}
+			</if>
+			<if test="gugunCode != 0">
+				WHERE sido_code = #{sidoCode} and gugun_code = #{gugunCode}
+			</if>
+			and title like CONCAT("%", #{title}, "%")
+		</if>
+		<if test="sidoCode != 0 and contentTypeId != 0 and title != ''">
+			<if test="gugunCode == 0">
+				WHERE sido_code = #{sidoCode}
+			</if>
+			<if test="gugunCode != 0">
+				WHERE sido_code = #{sidoCode} and gugun_code = #{gugunCode}
+			</if>
+			and  content_type_id = #{contentTypeId} and title like CONCAT("%", #{title}, "%")
+		</if>
+	</select>
+
+	<!-- 관광지 정보 상세조회 -->
+	<select id="selectOne" resultType="AttractionDto">
+		SELECT 
+			a.content_id as contentId, a.title, a.addr1,
+			a.tel, a.first_image as firstImage,
+			a.first_image2 as firstImage2, d.overview, a.latitude, a.longitude,
+			a.content_type_id as contentTypeId
+ 		FROM 
+			attraction_info as a NATURAL JOIN attraction_description as d
+		WHERE 
+			content_id = #{contentId}
+	</select>
+	
+	<!-- 시도 가져오기 -->
+	<select id="selectSidos" resultType="SidoDto">
+		SELECT sido_code as sidoCode, sido_name as sidoName
+		FROM sido
+	</select>
+	
+	<!-- 구군 가져오기 -->
+	<select id="selectGuguns" resultType="GugunDto">
+		SELECT gugun_code as gugunCode, gugun_name as gugunName
+		FROM gugun
+		WHERE sido_code = #{sidoCode}
+	</select>
+</mapper>

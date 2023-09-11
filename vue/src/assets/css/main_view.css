@@ -1,0 +1,162 @@
+/* @import '@/assets/css/app_vars.scss'; */
+
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+#banner {
+  background-color: #3288ff;
+  /* background-color: white; */
+  overflow: hidden; /* Hide the overflowing content */
+  /* position: relative; */
+  height : calc(100vh - 56px);
+  display : flex;
+  align-items: center;
+}
+
+.bannerComment {
+  display: inline-block;
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+#bannerComment {
+  /* color : #3288ff; */
+  color : white;
+  font-weight: 800;
+  font-size: 230px;
+  animation: slide-in-left 2s ease-in-out; /* 왼쪽에서 슬라이딩 */
+  margin-left: 15rem;
+  letter-spacing: 10px;
+
+  font-family: PyeongChangPeace-Bold;
+
+  text-shadow:
+    -15px 15px 0px  #ffb2f3,
+    -25px 25px 0px  #fa6cff,
+    -35px 35px 0px  #ec45db;
+  
+}
+
+#bannerComment2 {
+  position: relative;
+  right: -30%;
+  font-weight: 800;
+  font-size: 80px;
+  animation: slide-in-right 2s ease-in-out; /* CSS animation for sliding in from right */
+  /* color: #003468b4; */
+  color: rgba(255, 255, 255, 0.685);
+}
+
+.banner-button {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border : none;
+  background-color: transparent;
+}
+
+.second-section {
+  /* Styling for the next section */
+  min-height: 100vh;
+  max-height:100vh;
+  padding: 7rem 3rem 0 3rem;
+  background-color: rgb(239, 240, 241);
+}
+
+#second-section-row{
+  display : grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.second-section h1{
+  font-weight: 800;
+  text-align: center;
+  font-size: 70px;
+  margin-bottom: 7rem;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  cursor: pointer;
+  border-radius: 7px;
+  padding: 10px;
+  width: 400px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  border: none;
+  box-shadow : rgb(226,229,232) 0 0 5px 5px, rgb(229, 231, 235) 0 1px 3px 2px;
+  transition: 0.2s ease-in-out;
+}
+
+.card h2{
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: rgb(217, 220, 222) 0 0 20px 15px, rgb(229, 231, 235) 0 2px 7px 5px;
+  background-color: rgb(226,229,232);
+}
+.card:hover .avatar {
+  transform: scale(1.1);
+  object-position: 50% 65%;
+  box-shadow: rgb(226,229,232) 0 0 20px 15px, rgb(229, 231, 235) 0 2px 7px 5px;
+}
+
+.avatar {
+  width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 50%;
+  object-position: 50% 50%;
+  margin: 40px 0px;
+  box-shadow : rgb(226,229,232) 0 0 5px 2px, rgb(229, 231, 235) 0 1px 3px 1px;
+  border-radius: 50%;
+  transition: 0.15s ease-in-out;
+}
+
+/* CSS animation keyframes for sliding in from left */
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%); /* Start outside the left screen */
+  }
+  100% {
+    transform: translateX(0%); /* Slide into its position */
+  }
+}
+
+/* CSS animation keyframes for sliding in from right */
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(150%); /* Start outside the right screen */
+  }
+  100% {
+    transform: translateX(0%); /* Slide into its position */
+  }
+}
+
+/* Transition for the banner slide animation from left */
+.banner-slide-left-enter-active {
+  animation: slide-in-left 2s ease-in-out;
+}
+.banner-slide-left-leave-active {
+  animation: slide-in-left 2s reverse ease-in-out;
+}
+
+/* Transition for the banner slide animation from right */
+.banner-slide-right-enter-active {
+  animation: slide-in-right 2s ease-in-out;
+}
+.banner-slide-right-leave-active {
+  animation: slide-in-right 2s reverse ease-in-out;
+}

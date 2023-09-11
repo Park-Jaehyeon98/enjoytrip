@@ -1,0 +1,21 @@
+// Define variable defaults
+$body-bg: rgb(249, 250, 251);
+$blue: #3288ff;
+$grey-1 : #8B95A1;
+$grey-2 : #b4b6b9;
+$grey-3 : rgb(233, 233, 234);
+$secondary: $grey-1 !default;
+$box-shadow-inner : rgb(226,229,232);
+$box-shadow-outer : rgb(229, 231, 235);
+$box-shadow-sm: $box-shadow-outer 0 0 5px, $box-shadow-inner 0 1px 3px;
+$box-shadow-lg: $box-shadow-outer 0 0 20px, $box-shadow-inner 0 2px 7px;
+
+$input-hover-color: $grey-3;
+
+// body {
+//   max-height: 100%;
+// }
+
+// Then import Bootstrap and BootstrapVue SCSS files (order is important)
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+@import "/node_modules/bootstrap-vue/src/index.scss";

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.enjoytrip.model.dao.AttractionLikeMapper">
+	<select id="getAttrLikeNum" resultType="int">
+		SELECT 
+			count(*)
+		FROM
+		 	attraction_like
+		WHERE 
+			content_id = #{contentId}
+	</select>
+	
+	<select id="getIsLiked" resultType="int">
+		SELECT
+			 count(*)
+		FROM
+			attraction_like
+		WHERE
+			content_id = #{contentId} and user_id=#{id}
+	</select>
+	
+	<select id="getUserLikes" resultType="AttractionDto">
+		SELECT 
+			i.content_id as contentId, i.title, i.addr1, i.first_image as firstImage
+			
+		FROM 
+			attraction_like as a JOIN attraction_info as i
+		ON
+			a.content_id = i.content_id
+		WHERE 
+			a.user_id = #{userId}
+	</select>
+	
+	<insert id="likeAttr">
+		INSERT INTO 
+			attraction_like(content_id, user_id)
+		VALUES
+			(#{contentId}, #{id})
+	</insert>
+	
+	<delete id="unLikeAttr">
+		DELETE FROM 
+			attraction_like
+		WHERE 
+			content_id = #{contentId} and user_id=#{id}
+	</delete>	
+	
+	
+	
+</mapper>

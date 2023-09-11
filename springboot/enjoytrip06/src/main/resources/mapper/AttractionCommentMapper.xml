@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.enjoytrip.model.dao.AttractionCommentMapper">
+	<select id="selectAll" resultType="AttractionCommentDto">
+		SELECT acno, id, content, register_time as registerTime, content_id as contentId
+		from attraction_comment
+		where content_id = #{contentId}
+	</select>
+	
+	<insert id="insert" parameterType="AttractionCommentDto" >
+		INSERT INTO attraction_comment(id, content, content_id) VALUES(#{id}, #{content}, #{contentId})
+	</insert>
+	
+	<update id="update">
+		UPDATE attraction_comment
+		SET content = #{content}
+		WHERE acno = #{acno}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM attraction_comment WHERE acno = #{acno}
+	</delete>
+	
+	<select id="myAttractionComment" resultType="AttractionCommentDto">
+		select ac.acno, ac.content, ac.register_time as registerTime, ac.content_id as contentId, ai.title 
+		from attraction_comment ac join attraction_info ai
+		using(content_id)
+		where ac.id = #{id}
+	</select>
+</mapper>

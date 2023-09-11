@@ -1,0 +1,70 @@
+#detail{
+    padding: 30px 60px 60px 60px;
+}
+/* detail view */
+#attraction-detail{
+    margin-top: 30px;
+}
+
+#header { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header h1{
+    font-weight: 800;
+    font-size: 65px;
+    text-align: center;
+    display: inline;
+    background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 70%,
+    #3287ff50 30%
+  );
+}
+
+#info-block {
+    display: inline-block;
+}
+
+#info-block > span{
+    font-size : 20px;
+    margin-right: 10px;
+    color : #b4b6b9;
+}
+
+
+#content-block{
+    margin-top: 50px;
+    background-color: white;
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 10px;
+    padding : 60px;
+}
+
+#content-block > p::before{
+    content: "글 내용 : \A\A";
+    white-space: pre;
+}
+
+#board-detail{
+    padding:60px;
+}
+
+#image {
+    margin-top: 50px;
+}
+#image img{
+    width: 500px;
+    /* border-radius: 20px; */
+    /* height: 500px; */
+}
+#map-area{
+    margin-top: 50px;
+    width: 100%;
+}
+/* comment */
+#attraction-comment{
+
+}

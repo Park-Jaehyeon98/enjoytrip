@@ -1,0 +1,51 @@
+#detail{
+    padding: 30px 60px 60px 60px;
+}
+/* detail view */
+#attraction-detail{
+    margin-top: 30px;
+}
+
+#header { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header h1{
+    font-weight: 800;
+    font-size: 65px;
+    text-align: center;
+    display: inline;
+    background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 70%,
+    #3287ff50 30%
+  );
+}
+
+#like-block {
+    display: inline-block;
+}
+
+#like-block > span{
+    font-size : 20px;
+    margin-right: 10px;
+    color : #b4b6b9;
+}
+#image {
+    margin-top: 50px;
+}
+#image img{
+    width: 500px;
+    /* border-radius: 20px; */
+    /* height: 500px; */
+}
+#map-area{
+    margin-top: 50px;
+    width: 100%;
+}
+/* comment */
+#attraction-comment{
+
+}

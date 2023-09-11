@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.enjoytrip.model.dao.BoardCommentMapper">
+	<select id="selectAll" resultType="BoardCommentDto">
+		SELECT bcno, user_id as id, content, register_time as registerTime, bno
+		from board_comment
+		where bno = #{bno}
+	</select>
+	
+	<insert id="insert" parameterType="BoardCommentDto">
+		INSERT INTO board_comment(user_id, content, bno) VALUES(#{id}, #{content}, #{bno})
+	</insert>
+	
+	<update id="update">
+		UPDATE board_comment
+		SET content = #{content}
+		WHERE bcno = #{bcno}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM board_comment WHERE bcno = #{bcno}
+	</delete>
+	
+	<select id="myBoardComment" resultType="BoardCommentDto">
+		select bc.bcno, bc.content, bc.register_time as registerTime, bc.bno, b.subject
+		from board_comment bc join board_tb b
+		using(bno)
+		where user_id = #{id}
+	</select>
+</mapper>

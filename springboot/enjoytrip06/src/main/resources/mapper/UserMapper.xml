@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.enjoytrip.model.dao.UserMapper">
+
+	<select id="select" resultType="UserDto">
+		SELECT id, pw, email, name
+		FROM user
+		WHERE id = #{id} AND pw = #{pw}
+	</select>
+	
+	<select id="getUserInfo" resultType="UserDto">
+		SELECT id, email, name
+		FROM user
+		WHERE id = #{id}
+	</select>
+	
+	<update id="update">
+		UPDATE user SET pw = #{newpw}, email = #{email}, name = #{name} WHERE id = #{id} and pw = #{pw}
+	</update>
+	
+	<delete id="delete">
+		delete from user where id = #{id}
+	</delete>
+	
+	<insert id="insert" parameterType="UserDto">
+		INSERT INTO user(id, pw, email, name)
+		VALUES(#{id}, #{pw}, #{email}, #{name})
+	</insert>
+	
+	<select id="getRefreshToken" parameterType="string" resultType="string">
+		select token
+		from user
+		where id = #{userid}
+	</select>
+	
+	<update id="saveRefreshToken" parameterType="map">
+		update user
+		set token = #{token}
+		where id = #{userid}
+	</update>
+	
+	<update id="deleteRefreshToken" parameterType="map">
+		update user
+		set token = #{token, jdbcType=VARCHAR}
+		where id = #{userid}
+	</update>
+	
+</mapper>
