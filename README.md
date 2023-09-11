@@ -2,10 +2,10 @@
 
 ## 여행 관광지 주변 숙소 추천 웹 프로젝트
 
-> 기간 : 2023. 05. 18 ~ 2023.05. 25
-> 역할 : 팀장(2인 1팀)
-> 언어 : `Java`, `Java Script`
-> 환경 및 사용 기술 : `Eclipse` , `SpringBoot`, `Mybatis`, `Vue.js` , `Vuex` , `Html5` , `Css` , `BootStrap` , `Mysql` , `Kakao Map API,` `Google Map API` , `Places API`
+> 기간 : 2023. 05. 18 ~ 2023.05. 25<</br>
+> 역할 : 팀장(2인 1팀)<</br>
+> 언어 : `Java`, `Java Script`<</br>
+> 환경 및 사용 기술 : `Eclipse` , `SpringBoot`, `Mybatis`, `Vue.js` , `Vuex` , `Html5` , `Css` , `BootStrap` , `Mysql` , `Kakao Map API,` `Google Map API` , `Places API`<</br>
 
 - **여행 관광지 주변 숙수 추천 웹 프로젝트**
   - 프로젝트 개요
@@ -21,11 +21,37 @@
     - Kakao Map API를 사용하여 관광지의 세부 정보 확인 시 위치를 표시할 수 있도록 구현
     - 주변 숙박 업소 검색 기능을 구현하기 위해 Google에서 제공하는 Map API와 Places API를 활용
     - 사용자가 좋아요 목록에서 관광지를 선택하면 해당 관광지의 위도, 경도 정보를 주변 숙박 업소 표시 컴포넌트로 전달하여 위치를 표시하고 주변 장소를 검색하도록 구현
-      ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1cc21856-2529-4a56-8bc8-40c103f6668a/Untitled.png)
-      ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/59a67d9e-60d2-4cf8-9854-0f6356fcf98d/Untitled.png)
-      ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/216aa7ee-7c3e-4b28-8619-7aac5736143e/Untitled.png)
-      ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2a42b4c3-839e-4cb7-9180-7661801894d6/Untitled.png)
-      ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7dc784f5-0baf-473d-a8d9-37be54a18c96/Untitled.png)
-      ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/141b32ea-a3dd-411d-9cb3-a19a454b15fc/Untitled.png)
-      ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/df7b3699-5289-4414-93d9-0d99c3ade18e/Untitled.png)
-      ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8d09dcd9-40af-43cf-83d9-7dab3f84f630/Untitled.png)
+
+---
+
+## 기능명세서
+
+![12123](./images/1.png)
+
+## 유스케이스
+
+![1212](./images/2.png)
+
+## ERD
+
+![1212](./images/3.png)
+
+## 사용자 유스케이스
+
+![1212](./images/4.png)
+
+## 메인페이지 & 로그인 화면
+
+![1212](./images/5.png)
+
+## 관광지 상세페이지
+
+![1212](./images/6.png)
+
+## 내가 찜한 목록
+
+![1212](./images/7.png)
+
+## 관광지 주변 숙소 페이지
+
+![1212](./images/8.png)
