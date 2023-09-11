@@ -2,10 +2,10 @@
 
 ## 여행 관광지 주변 숙소 추천 웹 프로젝트
 
-> 기간 : 2023. 05. 18 ~ 2023.05. 25<</br>
-> 역할 : 팀장(2인 1팀)<</br>
-> 언어 : `Java`, `Java Script`<</br>
-> 환경 및 사용 기술 : `Eclipse` , `SpringBoot`, `Mybatis`, `Vue.js` , `Vuex` , `Html5` , `Css` , `BootStrap` , `Mysql` , `Kakao Map API,` `Google Map API` , `Places API`<</br>
+> 기간 : 2023. 05. 18 ~ 2023.05. 25<<br>
+> 역할 : 팀장(2인 1팀)<<br>
+> 언어 : `Java`, `Java Script`<<br>
+> 환경 및 사용 기술 : `Eclipse` , `SpringBoot`, `Mybatis`, `Vue.js` , `Vuex` , `Html5` , `Css` , `BootStrap` , `Mysql` , `Kakao Map API,` `Google Map API` , `Places API`<<br>
 
 - **여행 관광지 주변 숙수 추천 웹 프로젝트**
   - 프로젝트 개요
